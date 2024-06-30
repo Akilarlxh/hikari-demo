@@ -82,3 +82,32 @@ function ark_menu_link(link) {
         }
     }, 500)
 }
+//友链页面mini样式点击监测
+// 检查页面是否存在 .flink-mini-item 元素
+if (document.querySelectorAll('.flink-mini-item').length > 0) {
+    // 添加事件监听器到 .flink-mini-item 元素上
+    document.querySelectorAll('.flink-mini-item').forEach(item => {
+      item.addEventListener('click', handleFLinkMiniItemClick);
+    });
+  
+    function handleFLinkMiniItemClick(event) {
+      const fLinkMiniCoverBox = document.querySelector('#flink-mini-cover-box');
+      const fLinkMiniSiteshot = fLinkMiniCoverBox.querySelector('.flink-mini-siteshot');
+      const fLinkMiniMetaDescr = fLinkMiniCoverBox.querySelector('.flink-mini-meta-descr');
+      const fLinkMiniAvatar = fLinkMiniCoverBox.querySelector('.flink-mini-avatar');
+  
+      // 获取 .flink-mini-item 上的 data 属性值
+      const name = event.currentTarget.dataset.name;
+      const link = event.currentTarget.dataset.link;
+      const descr = event.currentTarget.dataset.descr;
+      const avatar = event.currentTarget.dataset.avatar;
+      const siteshot = event.currentTarget.dataset.siteshot;
+  
+      // 更新 #flink-mini-cover-box 中的元素
+      fLinkMiniCoverBox.setAttribute('href', 'javascript:void(0)');
+      fLinkMiniCoverBox.setAttribute('title', descr);
+      fLinkMiniSiteshot.setAttribute('src', siteshot);
+      fLinkMiniMetaDescr.textContent = descr;
+      fLinkMiniAvatar.setAttribute('src', avatar);
+    }
+  }
