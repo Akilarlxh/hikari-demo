@@ -82,6 +82,7 @@ function ark_menu_link(link) {
         }
     }, 500)
 }
+
 //友链页面mini样式点击监测
 // 检查页面是否存在 .flink-mini-item 元素
 if (document.querySelectorAll('.flink-mini-item').length > 0) {
@@ -91,7 +92,9 @@ if (document.querySelectorAll('.flink-mini-item').length > 0) {
     });
   
     function handleFLinkMiniItemClick(event) {
+      
       const fLinkMiniCoverBox = document.querySelector('#flink-mini-cover-box');
+      const fLinkMiniID = fLinkMiniCoverBox.querySelector('.flink-mini-meta-id')
       const fLinkMiniSiteshot = fLinkMiniCoverBox.querySelector('.flink-mini-siteshot');
       const fLinkMiniMetaDescr = fLinkMiniCoverBox.querySelector('.flink-mini-meta-descr');
       const fLinkMiniAvatar = fLinkMiniCoverBox.querySelector('.flink-mini-avatar');
@@ -104,10 +107,69 @@ if (document.querySelectorAll('.flink-mini-item').length > 0) {
       const siteshot = event.currentTarget.dataset.siteshot;
   
       // 更新 #flink-mini-cover-box 中的元素
-      fLinkMiniCoverBox.setAttribute('href', 'javascript:void(0)');
+      fLinkMiniCoverBox.setAttribute('href', link);
+      fLinkMiniCoverBox.setAttribute('target', '_blank');
       fLinkMiniCoverBox.setAttribute('title', descr);
+      fLinkMiniID.textContent = name;
       fLinkMiniSiteshot.setAttribute('src', siteshot);
       fLinkMiniMetaDescr.textContent = descr;
       fLinkMiniAvatar.setAttribute('src', avatar);
     }
   }
+// 友链页面mini样式搜索功能
+document.addEventListener('DOMContentLoaded', () => {
+    // 获取所有 .flink-mini-item 元素
+    const miniItems = document.querySelectorAll('.flink-mini-item');
+    const miniItemCount = miniItems.length;
+  
+    // 检查 localStorage 中是否存在 fLinkItemData
+    let fLinkItemData = JSON.parse(localStorage.getItem('fLinkItemData'));
+  
+    // 如果 fLinkItemData 不存在或 .flink-mini-item 数量发生变化,则重新构建
+    if (!fLinkItemData || fLinkItemData.count !== miniItemCount) {
+      fLinkItemData = {};
+      miniItems.forEach((item) => {
+        const dataName = item.dataset.name;
+        const dataLink = item.dataset.link;
+        fLinkItemData[dataLink] = {
+          name: dataName,
+          link: dataLink
+        };
+      });
+      fLinkItemData.count = miniItemCount;
+      localStorage.setItem('fLinkItemData', JSON.stringify(fLinkItemData));
+    }
+  
+    // 添加搜索功能
+    const fLinkSearchInput = document.querySelector('.flink-mini-search-input');
+    const fLinkRefreshButton = document.querySelector('.flink-mini-refresh-button');
+  
+    fLinkSearchInput.addEventListener('input', () => {
+      const searchTerm = fLinkSearchInput.value.toLowerCase();
+  
+      // 如果 fLinkItemData 不存在,则重新构建
+      if (!fLinkItemData) {
+        fLinkItemData = JSON.parse(localStorage.getItem('fLinkItemData'));
+      }
+  
+      document.querySelectorAll('.flink-mini-item').forEach((item) => {
+        const dataName = item.dataset.name.toLowerCase();
+        const dataLink = item.dataset.link.toLowerCase();
+        if (dataName.includes(searchTerm) || dataLink.includes(searchTerm)) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  
+    fLinkRefreshButton.addEventListener('click', () => {
+      // 清空搜索输入框
+      fLinkSearchInput.value = '';
+  
+      // 显示所有 .flink-mini-item 元素
+      document.querySelectorAll('.flink-mini-item').forEach((item) => {
+        item.classList.remove('hidden');
+      });
+    });
+  });
