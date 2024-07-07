@@ -4532,92 +4532,6 @@ figure.highlight pre .javascript .function {
   height: 100%;
   display: block;
 }
-#post-comment .comment-head {
-  margin-bottom: 20px;
-}
-#post-comment .comment-head:after {
-  display: block;
-  clear: both;
-  content: '';
-}
-#post-comment .comment-head .comment-headline {
-  display: inline-block;
-  vertical-align: middle;
-  font-weight: 700;
-  font-size: 1.43em;
-}
-#post-comment .comment-head .comment-switch {
-  display: inline-block;
-  float: right;
-  margin: 2px auto 0;
-  padding: 4px 16px;
-  width: max-content;
-  border-radius: 8px;
-  background: #f6f8fa;
-}
-#post-comment .comment-head .comment-switch .first-comment {
-  color: #49b1f5;
-}
-#post-comment .comment-head .comment-switch .second-comment {
-  color: #ff7242;
-}
-#post-comment .comment-head .comment-switch #switch-btn {
-  position: relative;
-  display: inline-block;
-  margin: -4px 8px 0;
-  width: 42px;
-  height: 22px;
-  border-radius: 34px;
-  background-color: #49b1f5;
-  vertical-align: middle;
-  cursor: pointer;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -o-transition: 0.4s;
-  -ms-transition: 0.4s;
-  transition: 0.4s;
-}
-#post-comment .comment-head .comment-switch #switch-btn:before {
-  position: absolute;
-  bottom: 4px;
-  left: 4px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background-color: #fff;
-  content: '';
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -o-transition: 0.4s;
-  -ms-transition: 0.4s;
-  transition: 0.4s;
-}
-#post-comment .comment-wrap > div {
-  -webkit-animation: tabshow 0.5s;
-  -moz-animation: tabshow 0.5s;
-  -o-animation: tabshow 0.5s;
-  -ms-animation: tabshow 0.5s;
-  animation: tabshow 0.5s;
-}
-#post-comment .comment-wrap > div:nth-child(2) {
-  display: none;
-}
-#post-comment.move #switch-btn {
-  background-color: #ff7242;
-}
-#post-comment.move #switch-btn:before {
-  -webkit-transform: translateX(20px);
-  -moz-transform: translateX(20px);
-  -o-transform: translateX(20px);
-  -ms-transform: translateX(20px);
-  transform: translateX(20px);
-}
-#post-comment.move .comment-wrap > div:first-child {
-  display: none;
-}
-#post-comment.move .comment-wrap > div:last-child {
-  display: block;
-}
 #footer {
   position: relative;
   height: 130px;
@@ -9803,6 +9717,555 @@ mjx-assistive-mml {
   position: relative;
   width: 75%;
   height: 80px;
+}
+#post-comment .comment-head {
+  color: #fff;
+  height: 60px;
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: 0px 20px;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+  font-family: 'spyagency', 'TaikoMagic';
+}
+#post-comment .comment-head:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  clip-path: polygon(0 0, 100% 0, 100% 20px, 40% 20px, calc(40% - 40px) 100%, 0 100%);
+  z-index: -1;
+}
+#post-comment .comment-head:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  clip-path: polygon(40% 20px, 70% 20px, calc(70% - 20px) 40px, calc(40% - 20px) 40px);
+  z-index: -1;
+}
+#post-comment .comment-head .comment-headline {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: 700;
+  font-size: 1.43em;
+}
+#post-comment .comment-head .comment-switch {
+  display: inline-block;
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-box;
+  display: inline-flex;
+  background: transparent;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 20px;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: 0 15px;
+  float: right;
+  width: max-content;
+}
+#post-comment .comment-head .comment-switch .first-comment {
+  color: #fff;
+}
+#post-comment .comment-head .comment-switch .second-comment {
+  color: #999a9d;
+}
+#post-comment .comment-head .comment-switch #switch-btn {
+  position: relative;
+  display: inline-block;
+  margin: 3px 5px 3px;
+  width: 30px;
+  height: 14px;
+  border-radius: 7px;
+  background-color: #49b1f5;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  -ms-transition: 0.4s;
+  transition: 0.4s;
+}
+#post-comment .comment-head .comment-switch #switch-btn:before {
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  content: '';
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  -ms-transition: 0.4s;
+  transition: 0.4s;
+}
+#post-comment .comment-wrap {
+  background: -webkit-linear-gradient(bottom, #000, #000 15px, transparent 15px, transparent);
+  background: -moz-linear-gradient(bottom, #000, #000 15px, transparent 15px, transparent);
+  background: -o-linear-gradient(bottom, #000, #000 15px, transparent 15px, transparent);
+  background: -ms-linear-gradient(bottom, #000, #000 15px, transparent 15px, transparent);
+  background: linear-gradient(to top, #000, #000 15px, transparent 15px, transparent);
+  padding: 30px 20px;
+}
+@media screen and (max-width: 768px) {
+  #post-comment .comment-wrap {
+    padding: 34px 14px;
+  }
+}
+#post-comment .comment-wrap > div {
+  -webkit-animation: tabshow 0.5s;
+  -moz-animation: tabshow 0.5s;
+  -o-animation: tabshow 0.5s;
+  -ms-animation: tabshow 0.5s;
+  animation: tabshow 0.5s;
+}
+#post-comment .comment-wrap > div:nth-child(2) {
+  display: none;
+}
+#post-comment.move .comment-switch .first-comment {
+  color: #999a9d;
+}
+#post-comment.move .comment-switch .second-comment {
+  color: #fff;
+}
+#post-comment.move #switch-btn {
+  background-color: #ff7242;
+}
+#post-comment.move #switch-btn:before {
+  -webkit-transform: translateX(16px);
+  -moz-transform: translateX(16px);
+  -o-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+#post-comment.move .comment-wrap > div:first-child {
+  display: none;
+}
+#post-comment.move .comment-wrap > div:last-child {
+  display: block;
+}
+#twikoo .tk-comments .tk-submit {
+  margin: 40px 0 0 0;
+}
+#twikoo .tk-comments .tk-submit .tk-row {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+#twikoo .tk-comments .tk-submit .tk-row .tk-avatar {
+  background: #000;
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -o-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  height: 70px;
+  padding: 0 0 0 15px;
+  border-radius: 0;
+  clip-path: polygon(0% 0%, calc(100% - 260px) 0%, calc(100% - 250px) 5px, calc(100% - 60px) 5px, calc(100% - 50px) 0%, 100% 0%, 100% 15px, 250px 15px, 240px 25px, 120px 25px, 80px 100%, 0% 100%);
+  margin: -25px 0 -45px 0;
+  z-index: 2;
+}
+#twikoo .tk-comments .tk-submit .tk-row .tk-avatar .tk-avatar-img {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+#twikoo .tk-comments .tk-submit .tk-row .tk-col {
+  background: rgba(90,93,98,0.8);
+}
+#twikoo .tk-comments .tk-submit .tk-row .tk-col .tk-meta-input {
+  background: #353333;
+  color: #fff;
+  padding: 0 0 0 100px;
+  height: 30px;
+  margin: 0 0 15px 0;
+}
+#twikoo .tk-comments .tk-submit .tk-row .tk-col .tk-meta-input .el-input .el-input-group__prepend {
+  border: none;
+  font-family: 'spyagency', 'TaikoMagic';
+  background: transparent;
+}
+#twikoo .tk-comments .tk-submit .tk-row .tk-col .tk-meta-input .el-input input.el-input__inner {
+  border: none;
+  background: transparent;
+}
+#twikoo .tk-comments .tk-submit .tk-row .tk-col .tk-input.el-textarea {
+  background: transparent;
+  padding: 5px 20px;
+}
+#twikoo .tk-comments .tk-submit .tk-row .tk-col .tk-input.el-textarea textarea.el-textarea__inner {
+  background-color: transparent;
+  background-size: contain;
+  color: #fff;
+}
+#twikoo .tk-comments .tk-submit .tk-row .tk-col .tk-input.el-textarea .el-input__count {
+  text-align: right;
+  display: block;
+  width: 100%;
+  bottom: 2px;
+  right: 27px;
+}
+#twikoo .tk-comments .tk-submit .tk-row.actions {
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  -o-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  display: -webkit-box !important;
+  display: -moz-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: box !important;
+  display: flex !important;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -o-box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 0 0 0;
+  font-family: 'spyagency', 'TaikoMagic';
+  background: rgba(90,93,98,0.8);
+}
+#twikoo .tk-comments .tk-submit .tk-row.actions .tk-row-actions-start {
+  -webkit-box-ordinal-group: 2;
+  -moz-box-ordinal-group: 2;
+  -o-box-ordinal-group: 2;
+  -ms-flex-order: 2;
+  -webkit-order: 2;
+  order: 2;
+  padding: 0 10px;
+}
+#twikoo .tk-comments .tk-submit .tk-row.actions .tk-submit-action-icon.__markdown {
+  display: none;
+}
+#twikoo .tk-comments .tk-submit .tk-row.actions button.el-button.tk-preview {
+  color: #000;
+  border: none;
+  background: transparent;
+  padding: 5px 15px;
+  -webkit-box-ordinal-group: 2;
+  -moz-box-ordinal-group: 2;
+  -o-box-ordinal-group: 2;
+  -ms-flex-order: 2;
+  -webkit-order: 2;
+  order: 2;
+}
+#twikoo .tk-comments .tk-submit .tk-row.actions button.el-button.tk-cancel {
+  color: #f00;
+  border: none;
+  background: transparent;
+  padding: 5px 15px;
+  -webkit-box-ordinal-group: 2;
+  -moz-box-ordinal-group: 2;
+  -o-box-ordinal-group: 2;
+  -ms-flex-order: 2;
+  -webkit-order: 2;
+  order: 2;
+}
+#twikoo .tk-comments .tk-submit .tk-row.actions button.el-button.tk-send {
+  width: 100%;
+  -webkit-box-ordinal-group: 1;
+  -moz-box-ordinal-group: 1;
+  -o-box-ordinal-group: 1;
+  -ms-flex-order: 1;
+  -webkit-order: 1;
+  order: 1;
+  background: #000;
+  color: #fff;
+  text-align: right;
+  display: block;
+  height: 20px;
+  font-size: 12px;
+  line-height: 15px;
+  padding: 0 30px 0 0;
+  border-radius: 0;
+  border: none;
+  clip-path: polygon(100% 0, 100% 100%, calc(100% - 400px) 100%, calc(100% - 390px) 9px, calc(100% - 150px) 9px, calc(100% - 140px) 0px);
+}
+#twikoo .tk-comments .tk-submit .tk-row.actions button.el-button.tk-send:hover {
+  color: #409eff;
+}
+#twikoo .tk-comments .tk-comments-container .tk-comments-title {
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: relative;
+  font-family: 'spyagency', 'TaikoMagic';
+}
+#twikoo .tk-comments .tk-comments-container .tk-comments-title .tk-comments-count {
+  color: #000;
+  width: fit-content;
+  position: relative;
+  padding: 0 20px;
+  font-size: 20px;
+  line-height: 40px;
+  text-shadow: 2px 2px 3px #808080;
+}
+#twikoo .tk-comments .tk-comments-container .tk-comments-title .tk-comments-count:before {
+  content: "<<<<";
+  position: absolute;
+  right: 100%;
+  top: 0;
+  height: 100%;
+  width: auto;
+  text-align: right;
+  color: #000;
+}
+#twikoo .tk-comments .tk-comments-container .tk-comments-title .tk-comments-count:after {
+  content: ">>>>";
+  position: absolute;
+  left: 100%;
+  top: 0;
+  height: 100%;
+  width: auto;
+  text-align: left;
+  color: #000;
+}
+#twikoo .tk-comments .tk-comments-container .tk-comments-title >span .tk-icon.__comments {
+  color: #000;
+}
+#twikoo .tk-comments .tk-comments-container .tk-comment.tk-master {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+#twikoo .tk-comments .tk-comments-container .tk-comment.tk-master .tk-avatar .tk-avatar-img {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+#twikoo .tk-comments .tk-comments-container .tk-comment.tk-master .tk-main >.tk-row .tk-meta {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+#twikoo .tk-comments .tk-comments-container .tk-comment.tk-master .tk-main >.tk-row .tk-action {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+#twikoo .tk-comments .tk-comments-container .tk-comment.tk-master .tk-main .tk-content {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+#twikoo .tk-comments .tk-comments-container .tk-comment.tk-master .tk-main .tk-extras {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+#twikoo .tk-comments .tk-comments-container .tk-comment {
+  margin: 60px 0 0 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+#twikoo .tk-comments .tk-comments-container .tk-comment .tk-avatar {
+  background: #000;
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -o-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  height: 70px;
+  padding: 0 0 0 15px;
+  border-radius: 0;
+  clip-path: polygon(0% 0%, calc(100% - 260px) 0%, calc(100% - 250px) 5px, calc(100% - 60px) 5px, calc(100% - 50px) 0%, 100% 0%, 100% 15px, 250px 15px, 240px 25px, 120px 25px, 80px 100%, 0% 100%);
+  margin: -25px 0 -45px 0;
+  z-index: 2;
+}
+#twikoo .tk-comments .tk-comments-container .tk-comment .tk-avatar .tk-avatar-img {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+#twikoo .tk-comments .tk-comments-container .tk-comment .tk-main {
+  width: 100%;
+}
+#twikoo .tk-comments .tk-comments-container .tk-comment .tk-main >.tk-row {
+  background: #353333;
+  padding: 0 10px 0 120px;
+}
+#twikoo .tk-comments .tk-comments-container .tk-comment .tk-main >.tk-row .tk-meta .tk-nick,
+#twikoo .tk-comments .tk-comments-container .tk-comment .tk-main >.tk-row .tk-meta .tk-time,
+#twikoo .tk-comments .tk-comments-container .tk-comment .tk-main >.tk-row .tk-meta .tk-actions {
+  color: #fff;
+  font-family: 'spyagency', 'TaikoMagic';
+}
+#twikoo .tk-comments .tk-comments-container .tk-comment .tk-main >.tk-row .tk-action .tk-action-link {
+  color: #fff;
+}
+#twikoo .tk-comments .tk-comments-container .tk-comment .tk-main >.tk-row .tk-action .tk-action-link .tk-action-icon {
+  color: #fff;
+}
+#twikoo .tk-comments .tk-comments-container .tk-comment .tk-main .tk-content {
+  margin: 0 0 0 0;
+  padding: 10px 15px;
+  background: rgba(90,93,98,0.8);
+  color: #fff;
+}
+#twikoo .tk-comments .tk-comments-container .tk-comment .tk-main .tk-extras {
+  font-family: 'spyagency', 'TaikoMagic';
+  text-align: right;
+  color: #000;
+  -webkit-box-direction: reverse;
+  -moz-box-direction: reverse;
+  -o-box-direction: reverse;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  position: relative;
+  background: rgba(90,93,98,0.8);
+  padding: 0px 0 5px 0;
+}
+#twikoo .tk-comments .tk-comments-container .tk-comment .tk-main .tk-extras:before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  width: 100%;
+  height: 20px;
+  background: #000;
+  clip-path: polygon(100% 0, 100% 100%, calc(100% - 400px) 100%, calc(100% - 390px) 9px, calc(100% - 150px) 9px, calc(100% - 140px) 0px);
 }
 #article-container .btn-center {
   margin: 0 0 20px;
