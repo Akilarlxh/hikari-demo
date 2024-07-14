@@ -745,7 +745,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (diffDay >= limitDay) {
       const ele = document.createElement('div')
       ele.className = 'post-outdate-notice'
-      ele.textContent = `${messagePrev} ${diffDay} ${messageNext}`
+      ele.innerHTML = `${messagePrev} <span>${diffDay}</span> ${messageNext}`
       const $targetEle = document.getElementById('article-container')
       if (position === 'top') {
         $targetEle.insertBefore(ele, $targetEle.firstChild)

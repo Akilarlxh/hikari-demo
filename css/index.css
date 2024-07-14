@@ -276,7 +276,6 @@ svg.icon {
 #article-container h5:before,
 #article-container h6:before,
 #article-container hr:before,
-#post .post-outdate-notice:before,
 .note:not(.no-icon)::before,
 .search-dialog hr:before {
   display: inline-block;
@@ -3967,6 +3966,232 @@ figure.highlight pre .javascript .function {
 #article-container .flink .grid-container .grid-item.flink-common-item .flink-common-container .flink-common-description .flink-common-descr:hover {
   color: var(--hkr-font-hover-color);
 }
+.reward-box {
+  padding: 30px 20px;
+}
+@media screen and (max-width: 768px) {
+  .reward-box {
+    padding: 34px 14px;
+  }
+}
+.reward-box .reward-total {
+  background: -webkit-linear-gradient(top, #000, #000 4px, transparent 4px, transparent 10px, #000 10px);
+  background: -moz-linear-gradient(top, #000, #000 4px, transparent 4px, transparent 10px, #000 10px);
+  background: -o-linear-gradient(top, #000, #000 4px, transparent 4px, transparent 10px, #000 10px);
+  background: -ms-linear-gradient(top, #000, #000 4px, transparent 4px, transparent 10px, #000 10px);
+  background: linear-gradient(to bottom, #000, #000 4px, transparent 4px, transparent 10px, #000 10px);
+  font-size: 18px;
+  width: 100%;
+  height: auto;
+  padding: 15px 10px 10px 10px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 10px) calc(100% - 10px), 50% calc(100% - 10px), calc(50% - 10px) 100%, 0 100%);
+  line-height: 1.2;
+}
+.reward-box .reward-total .reward-total-amount {
+  color: #fff;
+  font-family: 'spyagency', 'TaikoMagic';
+}
+.reward-box .reward-total .reward-total-amount .total {
+  color: #2377f5;
+}
+.reward-box .reward-item-list {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -o-box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.reward-box .reward-item-list .reward-item {
+  position: relative;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  overflow: hidden;
+  width: 222px;
+  height: 114px;
+  margin: 10px 10px;
+  font-family: 'spyagency', 'TaikoMagic';
+}
+.reward-box .reward-item-list .reward-item img.reward-item-background {
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
+.reward-box .reward-item-list .reward-item .reward-item-invoice {
+  width: 72%;
+  height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 1;
+  -webkit-box-align: end;
+  -moz-box-align: end;
+  -o-box-align: end;
+  -ms-flex-align: end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+}
+.reward-box .reward-item-list .reward-item .reward-item-invoice .reward-item-date {
+  color: #fff;
+  height: 20%;
+  width: 100%;
+  font-size: 12px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -o-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  padding: 0 10px;
+}
+.reward-box .reward-item-list .reward-item .reward-item-invoice .reward-item-amount {
+  color: #000;
+  height: 60%;
+  width: 100%;
+  font-size: 30px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.reward-box .reward-item-list .reward-item .reward-item-invoice .reward-item-name {
+  color: #fff;
+  height: 20%;
+  font-size: 12px;
+  width: 100%;
+  padding: 0px 15px;
+  text-align: right;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 5rem;
+}
+.reward-box .reward-item-list .reward-item .reward-item-stub {
+  width: 28%;
+  height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 1;
+}
+.reward-box .reward-item-list .reward-item .reward-item-stub .reward-item-method {
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.reward-box .reward-item-list .reward-item .reward-item-stub .reward-item-method.QQ {
+  color: #e50036;
+}
+.reward-box .reward-item-list .reward-item .reward-item-stub .reward-item-method.Alipay {
+  color: #2390f5;
+}
+.reward-box .reward-item-list .reward-item .reward-item-stub .reward-item-method.Wechat {
+  color: #13d36a;
+}
+.reward-box .reward-item-list .reward-item .reward-item-stub .reward-item-method.Charge {
+  color: #f38d11;
+}
 .article-tags-list {
   display: -webkit-box;
   display: -moz-box;
@@ -7149,26 +7374,22 @@ figure.highlight pre .javascript .function {
   }
 }
 #post .post-outdate-notice {
-  position: relative;
-  margin: 0 0 20px;
-  padding: 0.5em 1.2em;
-  border-radius: 3px;
-  background-color: #ffe6e6;
-  color: #f66;
-  padding: 0.5em 1em 0.5em 2.6em;
-  border-left: 5px solid #ff8080;
+  color: #fff;
+  font-family: 'spyagency', 'TaikoMagic';
+  background: -webkit-linear-gradient(top, #000, #000 4px, transparent 4px, transparent 10px, #000 10px);
+  background: -moz-linear-gradient(top, #000, #000 4px, transparent 4px, transparent 10px, #000 10px);
+  background: -o-linear-gradient(top, #000, #000 4px, transparent 4px, transparent 10px, #000 10px);
+  background: -ms-linear-gradient(top, #000, #000 4px, transparent 4px, transparent 10px, #000 10px);
+  background: linear-gradient(to bottom, #000, #000 4px, transparent 4px, transparent 10px, #000 10px);
+  font-size: 18px;
+  width: 100%;
+  height: auto;
+  padding: 15px 10px 10px 10px;
+  line-height: 1.2;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 10px) calc(100% - 10px), 50% calc(100% - 10px), calc(50% - 10px) 100%, 0 100%);
 }
-#post .post-outdate-notice:before {
-  position: absolute;
-  top: 50%;
-  left: 0.9em;
-  color: #ff8080;
-  content: '\f071';
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+#post .post-outdate-notice >span {
+  color: #2377f5;
 }
 #post .ads-wrap {
   margin: 40px 0;
